@@ -52,6 +52,10 @@ html, body {
   font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
 }
 
+.text-font-black-ops {
+  font-family: "Black Ops One", serif;
+}
+
 .text-size-64 {
   font-size: 64px;
 }
