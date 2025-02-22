@@ -25,7 +25,7 @@ html, body {
 }
 
 .text-accented {
-  color: rgb(29, 128, 159) !important;
+  color: rgb(7, 36, 84) !important;
 }
 
 .text-muted {
@@ -74,15 +74,15 @@ iframe.gmap {
 }
 
 .btn-outline-primary {
-  color: rgb(29, 128, 159) !important;
-  border-color: rgb(29, 128, 159) !important;
+  color: rgb(7, 36, 84) !important;
+  border-color: rgb(7, 36, 84) !important;
 }
 
 .btn-outline-primary:hover {
   color: white !important;
-  background-color: rgb(29, 128, 159) !important;
+  background-color: rgb(7, 36, 84) !important;
 }
 
 a {
-  color: rgb(29, 128, 159) !important;
+  color: rgb(7, 36, 84) !important;
 }
