@@ -1,0 +1,84 @@
+html, body {
+  overflow-y: auto;
+  overflow-x: hidden !important;
+  scrollbar-gutter: stable;
+}
+
+.btn-outline-secondary {
+  color: #ccc;
+  border-color: #ccc;
+}
+
+.btn-outline-secondary:hover {
+  color: #333 !important;
+  border-color: #ccc;
+  background-color: #ccc;
+}
+
+.mobile-header {
+  background-image:  linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url("../assets/img/full/header.jpg");
+  height: 400px;
+  max-height: 30vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-accented {
+  color: rgb(29, 128, 159) !important;
+}
+
+.text-muted {
+  color: #333333;
+}
+
+.text-font-inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+.text-font-caveat {
+  font-family: "Caveat", 'Bradley Hand', cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text-font-nyc {
+  font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
+}
+
+.text-size-64 {
+  font-size: 64px;
+}
+
+.text-size-32 {
+  font-size: 32px;
+}
+
+.text-size-24 {
+  font-size: 24px;
+}
+
+iframe.gmap {
+  height: 100%;
+  width: 100%;
+}
+
+.btn-outline-primary {
+  color: rgb(29, 128, 159) !important;
+  border-color: rgb(29, 128, 159) !important;
+}
+
+.btn-outline-primary:hover {
+  color: white !important;
+  background-color: rgb(29, 128, 159) !important;
+}
+
+a {
+  color: rgb(29, 128, 159) !important;
+}
