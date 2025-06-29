@@ -4,6 +4,10 @@ html, body {
   scrollbar-gutter: stable;
 }
 
+.max-width-500 {
+  max-width: 500px;
+}
+
 .btn-outline-secondary {
   color: #ccc;
   border-color: #ccc;
