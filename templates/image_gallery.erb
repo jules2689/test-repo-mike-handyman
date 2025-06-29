@@ -1,0 +1,5 @@
+<% Dir.glob(File.join(root, "assets/img/slideshow/*.{jpg,png}")).each do |image_path| -%>
+   <a href="./<%= path_relative_to_root(image_path) %>" data-ngThumb="./<%= path_relative_to_root(image_path) %>"></a>
+<% end -%>
+
+<a href="./assets/img/tile.jpg" data-ngThumb="./assets/img/tile.jpg"></a>
