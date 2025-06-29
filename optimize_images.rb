@@ -10,8 +10,8 @@ Dir.chdir(base_dir) do
     logger.info("Removing metadata from image: #{image_path}")
     system("exiftool -all= #{image_path} -overwrite_original")
 
-    image_width = `identify -format "%w" "#{image_path}"`.strip.to_i
-    image_height = `identify -format "%h" "#{image_path}"`.strip.to_i
+    image_width = `magick identify -format "%w" "#{image_path}"`.strip.to_i
+    image_height = `magick identify -format "%h" "#{image_path}"`.strip.to_i
 
     extra_flags = ""
 
