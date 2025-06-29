@@ -35,6 +35,8 @@ jobs:
         uses: ruby/setup-ruby@v1
       - name: Run render.rb
         run: ruby render.rb
+      - name: Remove ERB + Setup for public site
+        run: rm index.html.erb && rm -rf templates && rm config.yaml && rm render.rb
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
