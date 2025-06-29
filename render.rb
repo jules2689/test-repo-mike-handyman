@@ -1,5 +1,6 @@
 require "erb"
 require "pathname"
+require "yaml"
 
 # Load all templates
 $templates = {}
@@ -19,6 +20,10 @@ def path_relative_to_root(path)
   Pathname.new(path).relative_path_from(Pathname.new(__dir__))
 end
 
+# Load Site Configuration
+config = YAML.load_file(File.join(root, "config.yaml"))
+
+# Load all ERB templates from the templates directory
 Dir.glob("templates/**/*.erb").each do |file|
     template_name = File.basename(file, ".erb")
     $templates[template_name] = ERB.new(File.read(file), trim_mode: '-').result(binding)
