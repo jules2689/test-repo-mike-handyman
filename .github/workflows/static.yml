@@ -33,10 +33,14 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
+      - uses: mfinelli/setup-imagemagick@v6
+      - uses: woss/exiftool-action@v12.87
       - name: Run render.rb
         run: ruby render.rb
       - name: Remove ERB + Setup for public site
         run: rm index.html.erb && rm -rf templates && rm config.yaml && rm render.rb
+      - name: Optimize images
+        run: ruby optimize_images.rb
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
