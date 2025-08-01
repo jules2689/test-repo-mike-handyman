@@ -1,0 +1,83 @@
+<style>
+  .handyman-label {
+    font-family: Impact, "Arial Black", sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+  }
+  .before-label {
+    background-color: #dc3545;
+    color: white;
+  }
+  .after-label {
+    background-color: #28a745;
+    color: white;
+  }
+  .image-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  .label-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+  }
+  .carousel-item img {
+    height: 500px;
+     object-fit: cover;
+  }
+</style>
+
+<div class="container">
+  <h3 id="faq" style="margin-top: 20px">
+      Before & After
+    <a class="text-decoration-none fs-5" href="#before_after">🔗</a>
+  </h3>
+
+  <div class="d-flex justify-content-between align-items-center">
+    <!-- Prev Button (outside left) -->
+    <div>
+      <button class="btn btn-dark me-3" type="button"
+        data-bs-target="#beforeAfterCarousel" data-bs-slide="prev">
+        &#9664;
+      </button>
+    </div>
+
+    <div class="flex-grow-1">
+      <div id="beforeAfterCarousel" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+          <%= render "slide" %>
+        </div>
+      </div>
+
+      <div id="carousel-description" class="mt-3 px-2 text-dark text-center">
+        <p></p>
+      </div>
+    </div>
+
+    <!-- Next Button (outside right) -->
+    <div>
+      <button class="btn btn-dark ms-3" type="button"
+        data-bs-target="#beforeAfterCarousel" data-bs-slide="next">
+        &#9654;
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const carousel = document.getElementById('beforeAfterCarousel');
+    const desc = document.getElementById('carousel-description');
+
+    const activeSlideItem = document.querySelector('.carousel-item.active');
+    const description = activeSlideItem.getAttribute('data-description') || "&nbsp;";
+    desc.innerHTML = `<p>${description}</p>`;
+
+    carousel.addEventListener('slid.bs.carousel', function (event) {
+      const activeItem = event.relatedTarget;
+      const description = activeItem.getAttribute('data-description') || "&nbsp;";
+      desc.innerHTML = `<p>${description}</p>`;
+    });
+  </script>
+</div>

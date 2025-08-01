@@ -1,0 +1,37 @@
+<% has_active = false %>
+<% Dir.glob(File.join(root, "assets/img/comparisons/*")).each do |path| -%>
+  <% if File.directory?(path) %>
+    <% 
+      # Helper method to find the image with allowed extensions
+      def find_image(path, basename)
+        Dir.glob(File.join(path, "#{basename}.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}"), File::FNM_CASEFOLD).first
+      end
+
+      before_image = find_image(path, "before")
+      after_image = find_image(path, "after")
+    %>
+
+    <% if before_image && after_image %>
+      <% folder_name = File.basename(path) %>
+      <% before_filename = File.basename(before_image) %>
+      <% after_filename = File.basename(after_image) %>
+
+      <div class="carousel-item <% if !has_active %>active<% end %>" data-description="<%=
+        File.exist?(File.join(path, "description.txt")) ? File.read(File.join(path, "description.txt")) : '&nbsp;'
+      %>">
+        <% has_active = true %>
+
+        <div class="row g-0">
+          <div class="col-12 col-md-6 image-wrapper">
+            <img src="assets/img/comparisons/<%= folder_name %>/<%= before_filename %>" class="d-block w-100 object-fit-cover" alt="Before">
+            <div class="label-overlay handyman-label before-label">BEFORE</div>
+          </div>
+          <div class="col-12 col-md-6 image-wrapper">
+            <img src="assets/img/comparisons/<%= folder_name %>/<%= after_filename %>" class="d-block w-100 object-fit-cover" alt="After">
+            <div class="label-overlay handyman-label after-label">AFTER</div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
